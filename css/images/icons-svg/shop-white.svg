@@ -1,0 +1,22 @@
+//*****************************************************************************
+//
+// File supervisor: Alain Dessureaux
+// Date: May 2000
+//
+// © Copyright 2008 Autodesk, Inc.  All rights reserved.
+//
+// @doc	INTERNAL
+//
+// @module  C3DPrefsDataManagement | <c > SPDL definition.
+//
+//********************************************************************
+SPDL
+Version = "2.0.0.0";
+Reference = "{145520D3-4E75-4539-863F-A60DB27CEE25}"; // CLSID_3DPrefsGen
+
+//******************************************************************************
+// Includes
+//******************************************************************************
+include "SceneExplorer2.spdl"		// SceneExplorer SPDL defines
+
+//*************************************************************

@@ -1,0 +1,125 @@
+#####################
+### Determine whether a node represents a given literal
+###########################################################
+
+def is_tuple(node):
+    """Does the node represent a tuple literal?"""
+    if isinstance(node, Node) and node.children == [LParen(), RParen()]:
+        return True
+    return (isinstance(node, Node)
+            and len(node.children) == 3
+            and isinstance(node.children[0], Leaf)
+            and isinstance(node.children[1], Node)
+            and isinstance(node.children[2], Leaf)
+            and node.children[0].value == u"("
+            and node.children[2].value == u")")
+
+def is_list(node):
+    """Does the node represent a list literal?"""
+    return (isinstance(node, Node)
+            and len(node.children) > 1
+            and isinstance(node.children[0], Leaf)
+            and isinstance(node.children[-1], Leaf)
+            and node.children[0].value == u"["
+            and node.children[-1].value == u"]")
+
+
+###########################################################
+### Misc
+###########################################################
+
+def parenthesize(node):
+    return Node(syms.atom, [LParen(), node, RParen()])
+
+
+consuming_calls = set(["sorted", "list", "set", "any", "all", "tuple", "sum",
+                       "min", "max"])
+
+def attr_chain(obj, attr):
+    """Follow an attribute chain.
+
+    If you have a chain of objects where a.foo -> b, b.foo-> c, etc,
+    use this to iterate over all objects in the chain. Iteration is
+    terminated by getattr(x, attr) is None.
+
+    Args:
+        obj: the starting object
+        attr: the name of the chaining attribute
+
+    Yields:
+        Each successive object in the chain.
+    """
+    next = getattr(obj, attr)
+    while next:
+        yield next
+        next = getattr(next, attr)
+
+p0 = """for_stmt< 'for' any 'in' node=any ':' any* >
+        | comp_for< 'for' any 'in' node=any any* >
+     """
+p1 = """
+power<
+    ( 'iter' | 'list' | 'tuple' | 'sorted' | 'set' | 'sum' |
+      'any' | 'all' | (any* trailer< '.' 'join' >) )
+    trailer< '(' node=any ')' >
+    any*
+>
+"""
+p2 = """
+power<
+    'sorted'
+    trailer< '(' arglist<node=any any*> ')' >
+    any*
+>
+"""
+pats_built = False
+def in_special_context(node):
+    """ Returns true if node is in an environment where all that is required
+        of it is being itterable (ie, it doesn't matter if it returns a list
+        or an itterator).
+        See test_map_nochange in test_fixers.py for some examples and tests.
+        """
+    global p0, p1, p2, pats_built
+    if not pats_built:
+        p1 = patcomp.compile_pattern(p1)
+        p0 = patcomp.compile_pattern(p0)
+        p2 = patcomp.compile_pattern(p2)
+        pats_built = True
+    patterns = [p0, p1, p2]
+    for pattern, parent in zip(patterns, attr_chain(node, "parent")):
+        results = {}
+        if pattern.match(parent, results) and results["node"] is node:
+            return True
+    return False
+
+def is_probably_builtin(node):
+    """
+    Check that something isn't an attribute or function name etc.
+    """
+    prev = node.prev_sibling
+    if prev is not None and prev.type == token.DOT:
+        # Attribute lookup.
+        return False
+    parent = node.parent
+    if parent.type in (syms.funcdef, syms.classdef):
+        return False
+    if parent.type == syms.expr_stmt and parent.children[0] is node:
+        # Assignment.
+        return False
+    if parent.type == syms.parameters or \
+            (parent.type == syms.typedargslist and (
+            (prev is not None and prev.type == token.COMMA) or
+            parent.children[0] is node
+            )):
+        # The name of an argument.
+        return False
+    return True
+
+def find_indentation(node):
+    """Find the indentation of *node*."""
+    while node is not None:
+        if node.type == syms.suite and len(node.children) > 2:
+            indent = node.children[1]
+            if indent.type == token.INDENT:
+                return indent.value
+        node =

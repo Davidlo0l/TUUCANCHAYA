@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="product" content="ECS">
+      <meta name="release" content="2015">
+      <meta name="book" content="Installation">
+      <meta name="created" content="2014-02-14">
+      <meta name="topicid" content="GUID-7AA9CD42-C0A1-4769-8DF1-D651F4A4F4D8">
+      <meta name="description" content="配置におけるネットワーク共有の定義と役割を説明します。">
+      <meta name="indexterm" content="パスの長さ制限">
+      <meta name="topic-type" content="concept">
+      <meta name="audience" content="user">
+      <meta name="experiencelevel" content="general">
+      <meta name="topic-subtype" content="installing">
+      <meta name="audience" content="administrator">
+      <meta name="experiencelevel" content="general">
+      <meta name="topic-subtype" content="installing">
+      <meta name="keywords" content="共有フォルダ<so&gt;きょうゆうふぉるだ">
+      <meta name="keyword" content="共有フォルダ<so&gt;きょうゆうふぉるだ">
+      <title>概要 - ネットワーク共有</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%">
+      <div class="body_content" id="body-content"><span class="anchor_wrapper"><a name="GUID-7AA9CD42-C0A1-4769-8DF1-D651F4A4F4D8"></a></span><div class="head">
+            <h1>概要 - ネットワーク共有</h1>
+         </div>
+         <p class="blurb"> 配置におけるネットワーク共有の定義と役割を説明します。 </p>
+         <!--Body-->
+         <p><span class="anchor_wrapper"><a name="WS1A9193826455F5FF4E421D7D11BF108001D-51A3"></a></span> 配置を作成する準備が完全に整ったら、ネットワーク上の共有の場所からオートデスク製品のセットアップと配布の準備を行います。ネットワーク共有は、すべてのユーザのコンピュータがアクセスできるインストール用のフォルダです。ネットワーク共有に配置を作成し、プログラムのインストール用として、ユーザにこの場所を知らせます。ネットワーク共有フォルダ内のサブフォルダは、すべて自動的に共有フォルダになります。
+            
+         </p>
+         <div><span class="anchor_wrapper"><a name="GUID-FA5CC9C4-B941-4AD4-8584-566583EEF81E"></a></span><div class="note-important"><span class="label">重要:</span> 配置フォルダを階層の深いサブフォルダに置くと、Windows オペレーティング システムのパスの長さ制限を超える危険性があります。<em class="mild">¥¥serverXX¥Deployments</em> のように、ドライブのトップ フォルダかその付近の場所に配置を置くことにより、この可能性を回避することができます。 
+            </div>
+         </div>
+         <p><span class="anchor_wrapper"><a name="GUID-E1700742-0A90-4EDB-B234-A539E047AF65"></a></span>ネットワーク ログ ファイルを作成するオプションを選択した場合、ユーザのコンピュータはインストール中にネットワーク共有内のログ ファイルに項目を書き出します。そのため、このオプションを選択した場合、ユーザがネットワーク共有に読み書きアクセスできるようにする必要があります。
+            
+         </p>
+         <p><span class="anchor_wrapper"><a name="GUID-A039E35B-875F-44B3-957F-8E162A92F207"></a></span>配置作成プロセス中に、ネットワーク共有に配置フォルダを作成できます。同じ製品またはスイート製品の複数の配置を作成し、異なるユーザ グループ用に環境設定する場合、これらの配置は同じ管理イメージを共有でき、ショートカットは同じフォルダに置くことができます。ただし、別の製品またはスイート製品の配置を作成�

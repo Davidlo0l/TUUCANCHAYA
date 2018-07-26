@@ -1,0 +1,11 @@
+meFat;
+displayString -replace -value "Ôö³¤¼¡Èâ" m_cMuscleCreatorUI.kGrowFrameGrowMuscle;
+displayString -replace -value "Ôö³¤Ñ¡¶¨¼¡Èâ" m_cMuscleCreatorUI.kGrowFrameGrowMuscleAnnot;
+displayString -replace -value "Ôö³¤Ñ¡¶¨µã" m_cMuscleCreatorUI.kGrowFrameGrowSelPoints;
+displayString -replace -value "Ôö³¤Ñ¡¶¨µã" m_cMuscleCreatorUI.kGrowFrameGrowSelPointsAnnot;
+displayString -replace -value "Ôö³¤µ½ÇúÃæ:" m_cMuscleCreatorUI.kGrowFrameGrowSurface;
+displayString -replace -value "ÇúÃæ¼¡Èâ½«Ôö³¤µ½" m_cMuscleCreatorUI.kGrowFrameGrowSurfaceAnnot;
+displayString -replace -value "Ö÷¹Ç÷À:" m_cMuscleCreatorUI.kGrowFrameMainBone;
+displayString -replace -value "Ö÷¹Ç÷ÀÓÃÓÚÈ·¶¨¼¡Èâ¿ÉÒÔÔö³¤µÄ·½Ê½" m_cMuscleCreatorUI.kGrowFrameMainBoneAnnot;
+displayString -replace -value "Ö÷¹Ç÷ÀÄ©¶Ë:" m_cMuscleCreatorUI.kGrowFrameMainBoneTip;
+displayString -replace -value "Ö÷¹Ç÷ÀÓÃÓÚÈ·¶¨¼¡Èâ¿ÉÒÔÔ

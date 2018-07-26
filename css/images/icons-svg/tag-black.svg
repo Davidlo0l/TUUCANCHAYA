@@ -1,0 +1,35 @@
+ype = "Combo";
+		Items
+		{
+			"English"  = "en"
+		}
+	}
+	Parameter "undo"
+	{
+		Name        = "Number of Undo Levels";
+		GUID        = GUID_Undo_Levels;
+		Type        = VT_I4;
+		Class       = Unknown;
+		Value		= 50;
+		Range		= 0 to MAX;
+		UIRange		= 0 to 200;
+	}
+	Parameter "helplocationtype"
+	{
+		Name			= "Help Location Type";
+		Description		= "Displaying a web-based or custom version of the help";
+		GUID			= GUID_HelpLocationType;
+		Type			= VT_I4;
+		Range			= 0 to 3;
+		Class			= Unknown;
+		Value			= 0;
+		UIType			= "Radio";
+		Items
+		{
+			"Autodesk Web Site"				= 0
+//			"Local Computer/Network"		= 1
+			"Custom"						= 2
+//			"Old style .chm"				= 3
+		}
+	}
+	Parameter "help

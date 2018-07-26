@@ -1,0 +1,16 @@
+ise answer is:
+--                                  2302.58509299404495001799145442
+lnx732  ln 9.99999999999266E+999 -> 2302.58509299404       Inexact Rounded
+lnx733  ln 9.99999999999265E+999 -> 2302.58509299404       Inexact Rounded
+lnx734  ln 9.99999999999264E+999 -> 2302.58509299404       Inexact Rounded
+
+-- subnormals and underflows for exp, including underflow-to-zero edge point
+precision:   7
+maxExponent: 384
+minExponent: -383
+lnx751  ln 0E-389 -> -Infinity
+lnx758  ln 1.000001E-383 -> -881.8901      Inexact Rounded
+lnx759  ln 9.99991E-384 -> -881.8901       Inexact Rounded
+lnx760  ln 4.4605E-385 -> -885.0000        Inexact Rounded
+lnx761  ln 2.221E-386 -> -887.9999         Inexact Rounded
+lnx762  ln 3.01E-387 -> -889.9985          Inexact

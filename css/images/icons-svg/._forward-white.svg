@@ -1,0 +1,108 @@
+ node.parent
+    return u""
+
+###########################################################
+### The following functions are to find bindings in a suite
+###########################################################
+
+def make_suite(node):
+    if node.type == syms.suite:
+        return node
+    node = node.clone()
+    parent, node.parent = node.parent, None
+    suite = Node(syms.suite, [node])
+    suite.parent = parent
+    return suite
+
+def find_root(node):
+    """Find the top level namespace."""
+    # Scamper up to the top level namespace
+    while node.type != syms.file_input:
+        assert node.parent, "Tree is insane! root found before "\
+                           "file_input node was found."
+        node = node.parent
+    return node
+
+def does_tree_import(package, name, node):
+    """ Returns true if name is imported from package at the
+        top level of the tree which node belongs to.
+        To cover the case of an import like 'import foo', use
+        None for the package and 'foo' for the name. """
+    binding = find_binding(name, find_root(node), package)
+    return bool(binding)
+
+def is_import(node):
+    """Returns true if the node is an import statement."""
+    return node.type in (syms.import_name, syms.import_from)
+
+def touch_import(package, name, node):
+    """ Works like `does_tree_import` but adds an import statement
+        if it was not imported. """
+    def is_import_stmt(node):
+        return (node.type == syms.simple_stmt and node.children and
+                is_import(node.children[0]))
+
+    root = find_root(node)
+
+    if does_tree_import(package, name, root):
+        return
+
+    # figure out where to insert the new import.  First try to find
+    # the first import and then skip to the last one.
+    insert_pos = offset = 0
+    for idx, node in enumerate(root.children):
+        if not is_import_stmt(node):
+            continue
+        for offset, node2 in enumerate(root.children[idx:]):
+            if not is_import_stmt(node2):
+                break
+        insert_pos = idx + offset
+        break
+
+    # if there are no imports where we can insert, find the docstring.
+    # if that also fails, we stick to the beginning of the file
+    if insert_pos == 0:
+        for idx, node in enumerate(root.children):
+            if (node.type == syms.simple_stmt and node.children and
+               node.children[0].type == token.STRING):
+                insert_pos = idx + 1
+                break
+
+    if package is None:
+        import_ = Node(syms.import_name, [
+            Leaf(token.NAME, u"import"),
+            Leaf(token.NAME, name, prefix=u" ")
+        ])
+    else:
+        import_ = FromImport(package, [Leaf(token.NAME, name, prefix=u" ")])
+
+    children = [import_, Newline()]
+    root.insert_child(insert_pos, Node(syms.simple_stmt, children))
+
+
+_def_syms = set([syms.classdef, syms.funcdef])
+def find_binding(name, node, package=None):
+    """ Returns the node which binds variable name, otherwise None.
+        If optional argument package is supplied, only imports will
+        be returned.
+        See test cases for examples."""
+    for child in node.children:
+        ret = None
+        if child.type == syms.for_stmt:
+            if _find(name, child.children[1]):
+                return child
+            n = find_binding(name, make_suite(child.children[-1]), package)
+            if n: ret = n
+        elif child.type in (syms.if_stmt, syms.while_stmt):
+            n = find_binding(name, make_suite(child.children[-1]), package)
+            if n: ret = n
+        elif child.type == syms.try_stmt:
+            n = find_binding(name, make_suite(child.children[2]), package)
+            if n:
+                ret = n
+            else:
+                for i, kid in enumerate(child.children[3:]):
+                    if kid.type == token.COLON and kid.value == ":":
+                        # i+3 is the colon, i+4 is the suite
+                        n = find_binding(name, make_suite(child.children[i+4]), package)
+       

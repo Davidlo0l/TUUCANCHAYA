@@ -1,0 +1,42 @@
+rdItemArray_className(*args, **kwargs):
+    pass
+
+
+def MFnIkEffector_className(*args, **kwargs):
+    pass
+
+
+def MAnimControl_setAnimationStartTime(*args, **kwargs):
+    pass
+
+
+def MAnimControl_setCurrentTime(*args, **kwargs):
+    pass
+
+
+def MAnimControl_playBackward(*args, **kwargs):
+    pass
+
+
+def MAnimMessage_addNodeAnimKeyframeEditedCallback(*args, **kwargs):
+    pass
+
+
+def MFnKeyframeDeltaScale_swigregister(*args, **kwargs):
+    pass
+
+
+def MAnimControl_viewMode(*args, **kwargs):
+    pass
+
+
+def MAnimControl_autoKeyMode(*args, **kwargs):
+    pass
+
+
+def MAnimMessage_addDisableImplicitControlCallback(*args, **kwargs):
+    pass
+
+
+def MAnimControl_globalOutTangentType(*args, **kwargs):
+    

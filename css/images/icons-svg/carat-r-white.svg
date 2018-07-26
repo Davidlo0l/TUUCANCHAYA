@@ -1,0 +1,20 @@
+   = pFuncs->removeproperty;
+  NPNFuncs.hasproperty             = pFuncs->hasproperty;
+  NPNFuncs.hasmethod               = pFuncs->hasmethod;
+  NPNFuncs.releasevariantvalue     = pFuncs->releasevariantvalue;
+  NPNFuncs.setexception            = pFuncs->setexception;
+
+  browser = &NPNFuncs;
+
+  return NPERR_NO_ERROR;
+}
+
+NPError OSCALL NP_GetEntryPoints(NPPluginFuncs* pluginFuncs)
+{
+  if(pluginFuncs == NULL)
+    return NPERR_INVALID_FUNCTABLE_ERROR;
+
+  if(pluginFuncs->size < sizeof(NPPluginFuncs))
+    return NPERR_INVALID_FUNCTABLE_ERROR;
+
+	pluginFuncs->version = (NP_VERSION_MAJOR << 8) 

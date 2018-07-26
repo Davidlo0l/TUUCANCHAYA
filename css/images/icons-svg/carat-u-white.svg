@@ -1,0 +1,37 @@
+import weakref
+import _OpenMayaAnim
+from . import OpenMaya
+
+from __builtin__ import property as _swig_property
+from __builtin__ import object as _object
+
+class MFnGeometryFilter(OpenMaya.MFnDependencyNode):
+    def __del__(self):
+        pass
+    
+    
+    def __getattr__(self, name):
+        pass
+    
+    
+    def __init__(self, *args):
+        pass
+    
+    
+    def __repr__(self):
+        pass
+    
+    
+    def __setattr__(self, name, value):
+        pass
+    
+    
+    def deformerSet(self, *args):
+        pass
+    
+    
+    def envelope(self, *args):
+        pass
+    
+    
+    def g

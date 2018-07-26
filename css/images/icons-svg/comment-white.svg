@@ -1,0 +1,56 @@
+):
+        pass
+    
+    
+    __swig_destroy__ = None
+    
+    
+    __swig_getmethods__ = {}
+    
+    
+    __swig_setmethods__ = {}
+
+
+class MFnKeyframeDeltaWeighted(MFnKeyframeDelta):
+    def __del__(self):
+        pass
+    
+    
+    def __getattr__(self, name):
+        pass
+    
+    
+    def __init__(self, *args):
+        pass
+    
+    
+    def __repr__(self):
+        pass
+    
+    
+    def __setattr__(self, name, value):
+        pass
+    
+    
+    def type(self, *args):
+        pass
+    
+    
+    def wasWeighted(self, *args):
+        pass
+    
+    
+    def className(*args, **kwargs):
+        pass
+    
+    
+    __swig_destroy__ = None
+    
+    
+    __swig_getmethods__ = {}
+    
+    
+    __swig_setmethods__ = {}
+
+
+class MFnKeyframeDeltaSc

@@ -1,0 +1,44 @@
+callback', if given, is called with a
+    reference to the proxy when 'object' is about to be finalized.
+    """
+
+    pass
+
+
+def MFnKeyframeDeltaInfType_className(*args, **kwargs):
+    pass
+
+
+def MFnWireDeformer_className(*args, **kwargs):
+    pass
+
+
+def MFnHikEffector_className(*args, **kwargs):
+    pass
+
+
+def MAnimCurveClipboardItemArray_swigregister(*args, **kwargs):
+    pass
+
+
+def MFnKeyframeDeltaMove_className(*args, **kwargs):
+    pass
+
+
+def MFnIkEffector_swigregister(*args, **kwargs):
+    pass
+
+
+def MFnKeyframeDeltaMove_swigregister(*args, **kwargs):
+    pass
+
+
+def MFnKeyframeDelta_className(*args, **kwargs):
+    pass
+
+
+def MAnimControl_setAnimationStartEndTime(*args, **kwargs):
+    pass
+
+
+def

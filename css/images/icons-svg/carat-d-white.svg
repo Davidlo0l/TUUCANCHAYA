@@ -1,0 +1,8 @@
+e "µñ¿Ì" m_cMuscleCreatorUI.kSculptingFrame;
+displayString -replace -value "Ó°Ïì:" m_cMuscleCreatorUI.kSculptingFrameAffect;
+displayString -replace -value "X" m_cMuscleCreatorUI.kSculptingFrameAffectX;
+displayString -replace -value "Ó°Ïì X Öá" m_cMuscleCreatorUI.kSculptingFrameAffectXAnnot;
+displayString -replace -value "Ë¥¼õ:" m_cMuscleCreatorUI.kSculptingFrameFalloff;
+displayString -replace -value "Î»ÖÃ:" m_cMuscleCreatorUI.kSculptingFrameLocation;
+displayString -replace -value "¾²Ö¹" m_cMuscleCreatorUI.kSculptingFrameRest;
+displayString -replace -value "Ó°Ïì¾²Ö¹ºá½ØÃæ" m_cMus

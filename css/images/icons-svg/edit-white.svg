@@ -1,0 +1,13 @@
+am name="rotation.rotation_angle" type="4" value="0.000000"></param>
+				<portdef name="vector" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="rotation" type="16384" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">593</prop>
+					<prop name="posy">703</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Align on Velocity" version="1.0" index="8">
+				<param name="Local_Vector.Local_Vector_x" type="4" value="0.000000"></param>
+				<param name="Local_Vector.Local_Vector_y" type="4" value="-1.000000"></param>
+				<param name="Local_Vector.L

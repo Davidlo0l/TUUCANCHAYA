@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the   License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+
+<html>
+    <head>
+            <meta charset="UTF-8"> 
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta content="telephone=no" name="format-detection">
+            <meta content="no" name="msapplication-tap-highlight">
+                <meta content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" name="viewport">
+                    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
+                        <link href="css/index.css" rel="stylesheet" type="text/css">
+                            <link href="css/jquery.mobile.icons.min.css" rel="stylesheet" type="text/css">
+                                <link href="css/lol.min.css" rel="stylesheet" type="text/css">
+                                 <link href="css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet" type="text/css">
+                                        <script src="js/jquery-1.11.2.min.js" type="text/javascript">
+                                        </script>
+                                        <script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript">
+                                        </script>
+                                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                                        <script src="js/index.js" type="text/javascript">
+												
+                                        </script>
+                                        <script src="js/fecha.js"></script>
+                                        <script src="js/manager.js"></script>
+                                        <title>
+                                            TUCANCHAYA
+                                        </title>
+                                    </link>
+                                </link>
+                            </link>
+                        </link>
+                    </link>
+                </meta>
+            </meta>
+        </meta>
+    </head>
+    <body>
+        <div align="center" data-role="page" data-theme="a" id="inicio">
+           
+            <div data-role="content">
+                
+                <img height="60" src="img/name.png" width="250">
+                <img height="250" src="img/logo.png" width="180">
+                    <br>
+                        <br>
+                            <div align="left">
+                                <form>
+                                    <laeable for="email">
+                                        Email:
+                                    </laeable>
+                                    <input name="nombre" type="text" required>
+                                        <laeable for="password">
+                                        Constraseña:
+                                        </laeable>
+                                        <input name="password" type="password" required>
+                                            
+                                    </input>
+                                </form>
+                            </div>
+                            <a class="ui-btn login go2menu" id="login" data-transition="flip" href="#menu">
+                                Ingresar
+                            </a>
+                            <p>
+                                ¿No tienes cuenta de acceso?
+                            </p>
+                            <p>
+                                Acércate a
+                                <a href="#instalaciones">
+                                    Nuestras instalaciones
+                                </a>
+                                y adquiere usuario y contraseña
+                            </p>
+                        </br>
+                    </br>
+                </img>
+            </div>
+            
+        </div>
+
+
+
+        <!--Segunda Pagina _________________________________________________________________________________________________________-->
+        <div align="center" data-role="page" data-theme="a" id="instalaciones">
+            <div data-position="fixed" data-role="header">
+                <h1>
+                    TuCanchaYa
+                </h1>
+            </div>
+            <div data-role="content">
+                <p>
+                    Numero Telefono: 777777
+                </p>
+                <p>
+                    Direccion: Calle falsa 123
+                </p>
+                <p>
+                    Numero Celular: 312 000 0000
+                </p>
+                <iframe allowfullscreen="" frameborder="0" height="260" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1985.5325847715724!2d-73.34543701551335!3d5.557358935820707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a7c6c8ec0f69d%3A0x82b214619d987e6a!2sCanchas+Sinteticas+La+Estacion+Del+Futbol!5e0!3m2!1ses-419!2sco!4v1511145353157" style="border:0" width="320">
+                </iframe>
+                <br>
+                    <a class="ui-btn" data-transition="flip" href="#inicio">
+                        regresar
+                    </a>
+                </br>
+            </div>
+            <div data-position="fixed" data-role="footer">
+            </div>
+        </div>
+        <!--tercera Pagina -->
+        <div align="center" data-role="page" data-theme="a" id="menu">
+            <div align="right" data-position="fixed" data-role="header">
+            </div>
+            <div data-role="content">
+                <p>
+                </p>
+                <div align="left" id="usuario">
+                    <a class="ui-btn ui-btn-inline ui-icon-user ui-btn-icon-notext " data-rel="dialog" href="#perfil">
+                        Icon only
+                    </a>
+                    <div id="title">
+                        <h3>
+                            Bienvenido
+                        </h3>
+                        <div id="nombre">
+                            David Julian Gil
+                        </div>
+                    </div>
+                </div>
+                <br>
+                    <h1>Canchas disponibles</h1>
+                    <hr>
+                    <ul data-role="listview" data-inset="true" class="form">
+                        <li><a href="#Fecha">
+                            <img src="../_assets/img/album-bb.jpg">
+                        <h2>Broken Bells</h2>
+                        <p>Broken Bells</p></a>
+                        </li>
+                        <li><a href="#">
+                            <img src="../_assets/img/album-hc.jpg">
+                        <h2>Warning</h2>
+                        <p>Hot Chip</p></a>
+                        </li>
+                        <li><a href="#">
+                            <img src="../_assets/img/album-p.jpg">
+                        <h2>Wolfgang Amadeus Phoenix</h2>
+                        <p>Phoenix</p></a>
+                        </li>
+                    </ul>
+                    </hr>
+                </br>
+            </div>
+            <div data-position="fixed" data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a data-icon="star" data-rel="page" href="#Canjear">
+                                Canjear Puntos
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-icon="shop" data-rel="dialog" href="#historial">
+                                Mi historial
+                            </a>
+                        </li>
+                        <li>
+                            <a data-icon="info" data-rel="dialog" href="#instalaciones">
+                                Acerca de..
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--dialogo______________________________________________________________________________________ -->
+        <div data-role="dialog" data-theme="a" id="perfil">
+            <div align="center" data-position="fixed" data-role="header">
+                <h1>
+                    Perfil
+                </h1>
+            </div>
+            <div data-role="content">
+                <laeable for="nombre">
+                    Nombre :
+                </laeable>
+                <input name="nu" placeholder="David Julian Gil" type="text"/>
+                <laeable for="tele">
+                    Telefono :
+                </laeable>
+                <br>
+                    <input name="telefono" placeholder="312333123" type="text"/>
+                    <laeable for="emall">
+                        email :
+                    </laeable>
+                    <br>
+                        <input name="email" placeholder="fulano@gmail.com" type="text"/>
+                        <laeable for="ciudadad">
+                            Ciudad
+                        </laeable>
+                        <select>
+                            <option>
+                                Tunja
+                            </option>
+                            <option>
+                                Duitama
+                            </option>
+                            <option>
+                                Sogamoso
+                            </option>
+                            <option>
+                                Paipa
+                            </option>
+                        </select>
+                        <a class="ui-btn" data-transition="flip" href="#menu">
+                            Actualizar Datos
+                        </a>
+                        <a class="ui-btn" data-transition="flip" href="#menu">
+                            Regresar
+                        </a>
+                    </br>
+                </br>
+            </div>
+            <div align="center" data-position="fixed" data-role="footer">
+                <img height="80" src="img/piedepagina.jpg" width="300">
+                </img>
+            </div>
+        </div>
+        <!--dialogo 2_______________________________________________________________________________________ -->
+        <div data-role="dialog" data-theme="a" id="Confirmar">
+            <div align="center" data-position="fixed" data-role="header">
+                <h1>
+                    Confirmar Cancha
+                </h1>
+            </div>
+            <div data-role="content">
+                <laeable for="nombre">
+                    ¿Desea Confirmar la reserva de la cancha?
+                </laeable>
+                <laeable for="tele">
+                    el dia 24/11/2017 a las 2:00 PM :
+                </laeable>
+                <br>
+                   <a class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini" data-rel="back" href="index.html">
+                        Cancelar
+                    </a>
+                    <a class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left ui-btn-inline ui-mini" data-rel="page" href="#fin">
+                        Confirmar
+                    </a>
+                    
+                </br>
+            </div>
+            <div align="center" data-position="fixed" data-role="footer">
+            </div>
+        </div>
+        <!--dialogo 3_______________________________________________________________________________________ -->
+        <div data-role="dialog" data-theme="a" id="Fecha">
+            <div align="center" data-position="fixed" data-role="header">
+                <h1>
+                    Seleccione Fecha 
+                </h1>
+            </div>
+            <div data-role="content">
+                <laeable for="nombre">
+                      Ingrese Fecha :  
+                </laeable>
+                	
+                	<input type="date" name="fecha" step="1"  id="fechaActual">
+                 <script> 
+					 	var f = new Date();
+						 $("#fechaActual").attr("min",(dateFormat(f, 'yyyy-mm-dd')));
+					 //$("#fechaActual").attr("max",(dateFormat(f, 'yyyy-mm-dd')));
+					 f.setDate (f.getDate()+8);
+					 $("#fechaActual").attr("max",(dateFormat(new Date(f), 'yyyy-mm-dd')));
+					 //$(".fechaActual").attr("min",( f.getFullYear() + "-" + (f.getMonth() +1) + "-" +  f.getDate()));
+					
+					
+					
+				
+				</script>
+                <br>
+                    <a class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini" data-rel="back" href="index.html">
+                        Atras
+                    </a>
+                    <a class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left ui-btn-inline ui-mini" data-rel="page" id="confirmaFecha" href="#cancha">
+                        Confirmar
+                    </a>
+                   
+                </br>
+            </div>
+            <div align="center" data-position="fixed" data-role="footer">
+            </div>
+        </div>
+        <!--pagina 4 _________________________________________________________________________-->
+        <div data-role="page" data-theme="a" id="cancha">
+            <div align="center" data-position="fixed" data-role="header">
+            </div>
+            <div data-role="content">
+                <a class="ui-btn ui-btn-inline ui-icon-arrow-l ui-btn-icon-notext go2menu" data-rel="dialog" href="#menu">
+                    Icon only
+                </a>
+                <div align="center" id="title">
+                    <h3 id="nomcancha">
+                        Cancha
+                    </h3>
+                </div>
+                <img height="320" id="imgcancha" src="img/cancha1.jpg" width="330">
+                    <table class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-text="Mostrar" data-column-btn-theme="b" data-column-popup-theme="a" data-mode="columntoggle" data-role="table" id="table-custom-2">
+                        <thead>
+                            <tr class="ui-bar-d">
+                                <th data-priority="1">
+                                    Fecha
+                                </th>
+                                <th>
+                                </th>
+                                <th data-priority="2">
+                                    Hora
+                                </th>
+                                <th data-priority="3">
+                                    <abbr title="Precio">
+                                        Precio
+                                    </abbr>
+                                </th>
+                                <th data-priority="5">
+                                    Historial Reserva
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    24/07/18
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Disponible
+                                    </a>
+                                </td>
+                                <td>
+                                    2:00 PM
+                                </td>
+                                <td>
+                                   24/07/18
+                                </td>
+                                <td>
+                                    15%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    24/07/18
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Disponible
+                                    </a>
+                                </td>
+                                <td>
+                                    3:00 PM
+                                </td>
+                                <td>
+                                    $50.000
+                                </td>
+                                <td>
+                                    15%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    24/07/18
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Disponible
+                                    </a>
+                                </td>
+                                <td>
+                                    4:00 PM
+                                </td>
+                                <td>
+                                    $50.000
+                                </td>
+                                <td>
+                                    15%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                   24/07/18
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Disponible
+                                    </a>
+                                </td>
+                                <td>
+                                    5:00 PM
+                                </td>
+                                <td>
+                                    $50.000
+                                </td>
+                                <td>
+                                    15%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    24/09/20
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Disponible
+                                    </a>
+                                </td>
+                                <td>
+                                    6:00 PM
+                                </td>
+                                <td>
+                                    $45.000
+                                </td>
+                                <td>
+                                    15%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    24/09/20
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Disponible
+                                    </a>
+                                </td>
+                                <td>
+                                    7:00 PM
+                                </td>
+                                <td>
+                                    $45.000
+                                </td>
+                                <td>
+                                    70%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    25/09/20
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Disponible
+                                    </a>
+                                </td>
+                                <td>
+                                    8:00 PM
+                                </td>
+                                <td>
+                                    $45.000
+                                </td>
+                                <td>
+                                    95%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    25/09/20
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Disponible
+                                    </a>
+                                </td>
+                                <td>
+                                    1:00 PM
+                                </td>
+                                <td>
+                                    $45.000
+                                </td>
+                                <td>
+                                    92%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    25/09/20
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Disponible
+                                    </a>
+                                </td>
+                                <td>
+                                    2:00 PM
+                                </td>
+                                <td>
+                                    $45.000
+                                </td>
+                                <td>
+                                    85%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    25/09/20
+                                </th>
+                                <td class="title">
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Disponible
+                                    </a>
+                                </td>
+                                <td>
+                                    3:00  PM
+                                </td>
+                                <td>
+                                    $50.000
+                                </td>
+                                <td>
+                                    78%
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </img>
+            </div>
+        </div>
+        <!--pagina 5 -->
+        <div data-role="page" data-theme="a" id="fin">
+            <div data-position="fixed" data-role="header">
+                <h3>
+                    FELICIDADES
+                </h3>
+            </div>
+            <div data-role="content">
+                <br>
+                    <br>
+                        <br>
+                            <laeable for="email">
+                                <h1>
+                                    Su Cancha ha sido Apartada
+                                </h1>
+                            </laeable>
+                            <div align="center">
+                                <img src="img/Circulo.gif">
+                                    <p id="lospuntos">
+                                        + 10 puntos
+                                    </p>
+                                </img>
+                            </div>
+                            <br>
+                                <a class="ui-btn" data-transition="flip" href="#menu">
+                                    Salir
+                                </a>
+                            </br>
+                        </br>
+                    </br>
+                </br>
+            </div>
+        </div>
+        <!--pagina 6 -->
+        <div data-role="page" data-theme="a" id="Canjear">
+            <div data-position="fixed" data-role="header">
+            </div>
+            <div data-role="content">
+                <a class="ui-btn ui-btn-inline ui-icon-arrow-l ui-btn-icon-notext " data-rel="dialog" href="#menu">
+                    Icon only
+                </a>
+                <div align="center" id="title">
+                    <h3>
+                        CANJEAR PUNTOS
+                    </h3>
+                </div>
+                <div align="center" id="usr">
+                    <img height="100" src="img/usuario.jpg" width="100">
+                        <p>
+                            David Julian Gil
+                        </p>
+                        <p style="color:#FFC300">
+                            Sus Puntos acumulados son:
+                        </p>
+                        <img height="100" src="img/puntos.png" width="100">
+                        </img>
+                    </img>
+                </div>
+                <form>
+                    <fieldset data-mini="true" data-role="controlgroup">
+                        <legend>
+                            puedes cambiar tus puntos  por:
+                        </legend>
+                        <input checked="checked" id="radio-choice-v-6a" name="radio-choice-v-6" type="radio" value="on">
+                            <label for="radio-choice-v-6a">
+                                1 hora 200 PUNTOS
+                            </label>
+                            <input id="radio-choice-v-6b" name="radio-choice-v-6" type="radio" value="off">
+                                <label for="radio-choice-v-6b">
+                                    2 horas 350 PUNTOS
+                                </label>
+                            </input>
+                        </input>
+                    </fieldset>
+                </form>
+                <a class="ui-btn" data-transition="flip" href="#canchasgratis">
+                    Canjear
+                </a>
+            </div>
+        </div>
+        <!--pagina 7 -->
+        <div data-role="dialog" data-theme="a" id="cancha_apartada">
+            <div data-position="fixed" data-role="header">
+                <h3>
+                    CANCHAS APARTADAS
+                </h3>
+            </div>
+            <div data-role="content">
+                <div class="ui-controlgroup ui-controlgroup-vertical ui-group-theme-b ui-corner-all" data-enhanced="true" data-role="   controlgroup">
+                    <div class="ui-controlgroup-label" role="heading">
+                        <legend>
+                            <img src="img/cancha.gif">
+                            </img>
+                        </legend>
+                    </div>
+                    <div class="ui-controlgroup-controls ui-shadow">
+                        <label class="ui-first-child" for="pre-rendered-cb-1">
+                            Cancha 2 24/10/17 3PM
+                        </label>
+                        <input id="pre-rendered-cb-1" name="pre-rendered-cb-1" type="checkbox" value="1">
+                            <label class="ui-last-child" for="pre-rendered-cb-2">
+                                Cancha 3 25/10/17 4PM
+                            </label>
+                            <input id="pre-rendered-cb-2" name="pre-rendered-cb-2" type="checkbox" value="2">
+                            </input>
+                        </input>
+                    </div>
+                    <a class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left" href="#menu">
+                        Eliminar Reserva
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--pagina 8 -->
+        <div data-role="page" data-theme="a" id="canchasgratis">
+            <div align="center" data-position="fixed" data-role="header">
+            </div>
+            <div data-role="content">
+                <a class="ui-btn ui-btn-inline ui-icon-arrow-l ui-btn-icon-notext " data-rel="dialog" href="#menu">
+                    Icon only
+                </a>
+                <div align="center" id="title">
+                    <h3>
+                        Cancha gratis
+                    </h3>
+                </div>
+                <img height="320" src="img/cancha1.jpg" width="330">
+                    <table class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-text="Mostrar" data-column-btn-theme="b" data-column-popup-theme="a" data-mode="columntoggle" data-role="table" id="table-custom-2">
+                        <thead>
+                            <tr class="ui-bar-d">
+                                <th data-priority="1">
+                                    Fecha
+                                </th>
+                                <th>
+                                </th>
+                                <th data-priority="3">
+                                    Hora
+                                </th>
+                                <th data-priority="5">
+                                    Historial Reserva
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    23/09/20
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Cancha Gratis
+                                    </a>
+                                </td>
+                                <td>
+                                    2:00 PM
+                                </td>
+                                <td>
+                                    15%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    23/09/20
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Cancha Gratis
+                                    </a>
+                                </td>
+                                <td>
+                                    8:00 AM
+                                </td>
+                                <td>
+                                    15%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    24/09/20
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Cancha Gratis
+                                    </a>
+                                </td>
+                                <td>
+                                    9:00 AM
+                                </td>
+                                <td>
+                                    15%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    24/09/20
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Cancha Gratis
+                                    </a>
+                                </td>
+                                <td>
+                                    10:00 AM
+                                </td>
+                                <td>
+                                    15%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    25/09/20
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Cancha Gratis
+                                    </a>
+                                </td>
+                                <td>
+                                    8:00 AM
+                                </td>
+                                <td>
+                                    15%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    25/09/20
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Cancha Gratis
+                                    </a>
+                                </td>
+                                <td>
+                                    9:00 AM
+                                </td>
+                                <td>
+                                    15%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    26/09/20
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Cancha Gratis
+                                    </a>
+                                </td>
+                                <td>
+                                    10:00 AM
+                                </td>
+                                <td>
+                                    15%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    26/09/20
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Cancha Gratis
+                                    </a>
+                                </td>
+                                <td>
+                                    11:00 AM
+                                </td>
+                                <td>
+                                    15%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    26/09/20
+                                </th>
+                                <td>
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Cancha Gratis
+                                    </a>
+                                </td>
+                                <td>
+                                    2:00 PM
+                                </td>
+                                <td>
+                                    15%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    26/09/20
+                                </th>
+                                <td class="title">
+                                    <a data-rel="dialog" href="#Confirmar">
+                                        Cancha Gratis
+                                    </a>
+                                </td>
+                                <td>
+                                    3:00  PM
+                                </td>
+                                <td>
+                                    15%
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </img>
+            </div>
+        </div>
+        <!--pagina 9 -->
+        <div data-role="dialog" data-theme="a" id="historial">
+            <div data-position="fixed" data-role="header">
+                <h3>
+                    MI HISTORIAL
+                </h3>
+            </div>
+            <div data-role="content">
+                <ul data-inset="true" data-role="listview">
+                    <li data-role="list-divider">
+                        Viernes 17, Noviembre 2017
+                        <span class="ui-li-count">
+                            2
+                        </span>
+                    </li>
+                    <li>
+                        <a href="#cancha">
+                            <h2>
+                                Cancha 1
+                            </h2>
+                            <p>
+                                <strong>
+                                    Apartaste cancha el dia 17/Noviembre 2017 a las 5:08 PM
+                                </strong>
+                            </p>
+                            <p class="ui-li-aside">
+                                <strong>
+                                    6:00 PM
+                                </strong>
+                                PM
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#cancha">
+                            <h2>
+                                Cancha 1
+                            </h2>
+                            <p>
+                                <strong>
+                                    Apartaste cancha el dia 17/Noviembre 2017 a las 5:10 PM
+                                </strong>
+                            </p>
+                            <p class="ui-li-aside">
+                                <strong>
+                                    7:00 PM
+                                </strong>
+                                AM
+                            </p>
+                        </a>
+                    </li>
+                    <li data-role="list-divider">
+                        Sabado 21, Octubre 2017
+                        <span class="ui-li-count">
+                            1
+                        </span>
+                    </li>
+                    <li>
+                        <a href="#error">
+                            <h2>
+                                Cancha 3
+                            </h2>
+                            <p>
+                                <strong>
+                                    Apartaste cancha el dia 12/Octubre 2017 a las 12:35 PM
+                                </strong>
+                            </p>
+                            <p class="ui-li-aside">
+                                <strong>
+                                    4:48
+                                </strong>
+                                PM
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--dialogo 4 -->
+        <div data-role="dialog" data-theme="a" id="error">
+            <div align="center" data-position="fixed" data-role="header">
+                <h1>
+                    Cancha Ocupada
+                </h1>
+            </div>
+            <div data-role="content">
+                <laeable for="nombre">
+                    ! la cancha ya ha sido reservada con anterioridad !
+                </laeable>
+                <br>
+                    <a class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini" data-rel="back" href="#historial">
+                        Aceptar
+                    </a>
+                </br>
+            </div>
+            <div align="center" data-position="fixed" data-role="footer">
+            </div>
+        </div>
+        
+    </body>
+</html>
